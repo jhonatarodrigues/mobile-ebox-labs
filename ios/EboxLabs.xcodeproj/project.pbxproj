@@ -15,6 +15,8 @@
 		7699B88040F8A987B510C191 /* libPods-EboxLabs-EboxLabsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-EboxLabs-EboxLabsTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8C77E038BDCD2C5D2C45D228 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 3E3561DFCA4B2A5102241EA5 /* PrivacyInfo.xcprivacy */; };
+		C55A028AE60847129C001DEA /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B29904C8697430FA7C0ACA1 /* Inter-Bold.ttf */; };
+		F808EA1E58444A5CB80A5B6C /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C97A47246353403984FF2C1B /* Inter-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,7 @@
 		00E356EE1AD99517003FC87E /* EboxLabsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EboxLabsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* EboxLabsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EboxLabsTests.m; sourceTree = "<group>"; };
+		0B29904C8697430FA7C0ACA1 /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../src/assets/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* EboxLabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EboxLabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = EboxLabs/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = EboxLabs/AppDelegate.mm; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-EboxLabs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EboxLabs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EboxLabs/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-EboxLabs-EboxLabsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EboxLabs-EboxLabsTests.release.xcconfig"; path = "Target Support Files/Pods-EboxLabs-EboxLabsTests/Pods-EboxLabs-EboxLabsTests.release.xcconfig"; sourceTree = "<group>"; };
+		C97A47246353403984FF2C1B /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../src/assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -127,6 +131,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				A7CB4BC34F214481BC00C0A0 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -140,6 +145,16 @@
 				00E356EE1AD99517003FC87E /* EboxLabsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A7CB4BC34F214481BC00C0A0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0B29904C8697430FA7C0ACA1 /* Inter-Bold.ttf */,
+				C97A47246353403984FF2C1B /* Inter-Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -249,6 +264,8 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				8C77E038BDCD2C5D2C45D228 /* PrivacyInfo.xcprivacy in Resources */,
+				C55A028AE60847129C001DEA /* Inter-Bold.ttf in Resources */,
+				F808EA1E58444A5CB80A5B6C /* Inter-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
