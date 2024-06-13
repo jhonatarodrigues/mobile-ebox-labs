@@ -6,18 +6,20 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import HomeScreen from '@/screens/home';
 import ProductsScreen from '@/screens/products';
+import ProductsDetailScreen from '@/screens/productsDetail';
 
 const Stack = createNativeStackNavigator();
 
 function Routes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Products" >
+      <Stack.Navigator initialRouteName="ProductsDetail" >
         <Stack.Screen name="Home" component={HomeScreen} options={{
           headerShown: false,
         
         }}/>
         <Stack.Screen name="Products" component={ProductsScreen} />
+        <Stack.Screen name="ProductsDetail" component={ProductsDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

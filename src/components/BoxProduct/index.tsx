@@ -1,17 +1,12 @@
 import React from "react";
-import { Text } from "react-native";
 
 import BoxImage from '@/assets/image/box.png'
-import { ContentBox, Box, Image, Title, Dosage, ButtonDescription, ButtonDescriptionText } from "./styles";
-import COLORS from "@/constants/colors";
+import { ContentBox, Box, Image, Title, Dosage, AlignButton,  } from "./styles";
+
+import Button from "../Button";
 
 
-const styleBoxShadow = {
-  shadowColor: COLORS.BLACK,
-  shadowOffset: {width: -2, height: 4},
-  shadowOpacity: 0.3,
-  shadowRadius: 3,
-}
+
 
 export const BoxProduct = () => {
 
@@ -23,10 +18,9 @@ export const BoxProduct = () => {
         <Image source={BoxImage} />
         <Title>testosterone Enanthate</Title>
         <Dosage>300mg / 10ml</Dosage>
-        
-        <ButtonDescription style={styleBoxShadow}>
-          <ButtonDescriptionText>Description</ButtonDescriptionText>
-        </ButtonDescription>
+        <AlignButton>
+          <Button onPress={() => {}} text="Description" />
+        </AlignButton>
       </Box>
     </ContentBox>
   );

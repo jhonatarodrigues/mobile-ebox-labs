@@ -36,17 +36,7 @@ export const Dosage = styled.Text`
   color: ${COLORS.BROWN};
 `;
 
-export const ButtonDescription = styled.View`
-  padding-vertical: 10px;
-  padding-horizontal: 25px;
-  background-color: ${COLORS.BROWN};
-  border-radius: 40px;
+export const AlignButton = styled.View`
   margin-top: 20px;
   margin-bottom: -20px;
-`;
-
-export const ButtonDescriptionText = styled.Text`
-  font-size: 12px;
-  font-family: ${FONTS.REGULAR};
-  color: ${COLORS.WHITE};
 `;
