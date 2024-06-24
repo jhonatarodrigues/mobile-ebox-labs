@@ -7,18 +7,18 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from '@/screens/home';
 import ProductsScreen from '@/screens/products';
 import ProductsDetailScreen from '@/screens/productsDetail';
+import BottomTabHome from '@/screens/bottomTab/bottomTab';
 
 const Stack = createNativeStackNavigator();
 
 function Routes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="ProductsDetail" >
-        <Stack.Screen name="Home" component={HomeScreen} options={{
+      <Stack.Navigator initialRouteName="/" >
+        <Stack.Screen name="/" component={BottomTabHome} options={{
           headerShown: false,
-        
         }}/>
-        <Stack.Screen name="Products" component={ProductsScreen} />
+        
         <Stack.Screen name="ProductsDetail" component={ProductsDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>

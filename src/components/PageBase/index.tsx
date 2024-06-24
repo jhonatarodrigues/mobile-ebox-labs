@@ -6,11 +6,9 @@ import { Base } from "./styles";
 export const PageBase = ({children}: {children: JSX.Element}) => {
 
   return (
-    <BaseGradient>
       <Base>
         {children}
       </Base>
-    </BaseGradient>
   );
 }
 
