@@ -6,11 +6,11 @@
  */
 
 import React from 'react';
-
+import {BaseGradient} from './src/components/BaseGradient';
 import Routes from './src/routes';
 
 function App(): React.JSX.Element {
-  return <Routes />;
+  return <BaseGradient><Routes /></BaseGradient>;
 }
 
 export default App;

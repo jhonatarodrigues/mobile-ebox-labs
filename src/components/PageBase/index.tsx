@@ -1,5 +1,4 @@
 import React from "react";  
-import { BaseGradient } from "../BaseGradient";
 import { Base } from "./styles";
 
 

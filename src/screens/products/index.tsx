@@ -1,13 +1,11 @@
 import PageBase from "@/components/PageBase";
 import React from "react";
-import { FlatList, Text } from "react-native";
+import { FlatList } from "react-native";
 import { ContentBox } from "./styles";
 import BoxProduct from "@/components/BoxProduct";
 
 
 export const Products = () => {
-
-  console.log('Products screen');
 
   return (
     <PageBase>

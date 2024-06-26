@@ -1,10 +1,9 @@
-import COLORS from '@/constants/colors';
 import styled from 'styled-components/native';
 
 export const ContentTabBar = styled.View`
-  border: 1px solid #f00;
   padding-vertical: 30px;
   padding-horizontal: 50px;
+  padding-top: 15px;
   flex-direction: row;
   justify-content: space-between;
 `;
