@@ -11,16 +11,17 @@ const styleBoxShadow = {
 }
 
 type IButtonProps = {
-  onPress: () => void;
+  onPress?: () => void;
   text: string;
+  disabled?: boolean;
 }
 
-const Button = ({ onPress, text }:IButtonProps) => {
+const Button = ({ onPress, text, disabled }:IButtonProps) => {
 
-  console.log('Button component');
+
 
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity disabled={disabled} onPress={onPress}>
       <ButtonBase style={styleBoxShadow}>
         <ButtonText>{text}</ButtonText>
       </ButtonBase>

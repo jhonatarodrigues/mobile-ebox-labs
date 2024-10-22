@@ -83,6 +83,12 @@ android {
         versionName "1.0"
     }
     signingConfigs {
+        release {
+            storeFile file('ebox.keystore')
+            storePassword 'ebox123'
+            keyAlias 'ebox_alias'
+            keyPassword 'ebox123'
+        }
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
@@ -100,6 +106,7 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
 }

@@ -1,29 +1,34 @@
 import React from "react";
+import { BASE_URL } from '@env';
 
-import BoxImage from '@/assets/image/box.png'
-import { ContentBox, Box, Image, Title, Dosage, AlignButton,  } from "./styles";
+import { ContentBox, Box, Image, Title, Dosage, AlignButton, ContentImage,  } from "./styles";
 
 import Button from "../Button";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { ProductsModel } from "@/model/products";
 
+type BoxProductProps = {
+  product: ProductsModel;
+}
 
-
-
-export const BoxProduct = () => {
+export const BoxProduct = ({product}: BoxProductProps) => {
   const navigation = useNavigation();
 
-  console.log('BoxProduct component');
+  console.log('\n\n\n\n =====   ',  `${BASE_URL}/upload/${product.file}`);
+
 
   return (
     <ContentBox>
       <TouchableOpacity onPress={() => navigation.navigate('ProductsDetail')}>
       <Box>
-        <Image source={BoxImage} />
-        <Title>testosterone Enanthate</Title>
-        <Dosage>300mg / 10ml</Dosage>
+        <ContentImage>
+          <Image source={{uri: `${BASE_URL}/uploads/${product.file}`}} />
+        </ContentImage>
+        <Title>{product.title}</Title>
+        <Dosage>{product.quantity}</Dosage>
         <AlignButton>
-          <Button onPress={() => {}} text="Description" />
+          <Button disabled text="Description" />
         </AlignButton>
       </Box>
       </TouchableOpacity>

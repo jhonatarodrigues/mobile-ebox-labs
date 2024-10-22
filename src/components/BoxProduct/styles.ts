@@ -16,11 +16,19 @@ export const Box = styled.View`
   border-radius: 15px;
 `;
 
-export const Image = styled.Image`
+export const ContentImage = styled.View`
   width: 100%;
   height: 140px;
-  resize-mode: contain;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  overflow: hidden;
   margin-bottom: 10px;
+`;
+
+export const Image = styled.Image`
+  width: 100%;
+  height: 100%;
+  resize-mode: cover;
 `;
 
 export const Title = styled.Text`
