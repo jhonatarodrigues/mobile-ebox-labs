@@ -2,14 +2,14 @@ import PageBase from "@/components/PageBase";
 import React from "react";
 import { BaseImage, BaseText, BoxDescription, BoxDescriptionAlignText, ButtonAlign, ContentBox, ContentImage, DescriptionText, DescriptionTitle, Image, OrnamentLine, Quantity, Title } from "./styles";
 import Button from "@/components/Button";
-import BoxImage from '@/assets/image/box.png'
 import { BaseGradient } from "@/components/BaseGradient";
+import { BASE_URL } from "@env";
+import { RouteProp } from "@react-navigation/native";
+import { RootStackParamList } from "@/routes/types";
 
 
-
-export const ProductsDetail = () => {
-
-  console.log('Products Detail screen');
+export const ProductsDetail = ({route}: {route: RouteProp<RootStackParamList, 'DetailsProduct'>;}) => {
+  const {product} = route.params;
 
   return (
     <BaseGradient>
@@ -17,11 +17,11 @@ export const ProductsDetail = () => {
         <ContentBox>
           <ContentImage>
             <BaseImage>
-              <Image source={BoxImage} />
+              <Image source={{uri: `${BASE_URL}/uploads/${product.file}`}} />
             </BaseImage>
             <BaseText>
-              <Title>testosterone enanthate</Title>
-              <Quantity>300mg / 10ml</Quantity>
+              <Title>{product.title}</Title>
+              <Quantity>{product.quantity}</Quantity>
             </BaseText>
 
           </ContentImage>
@@ -30,15 +30,7 @@ export const ProductsDetail = () => {
             <BoxDescriptionAlignText>
               <DescriptionTitle>Composition</DescriptionTitle>
               <DescriptionText>Each ml contains:
-                Nandrolone Decanoate...200mg
-                Ethyl Oleate N.F...QS
-                DISPOSE
-                of empty container
-                by wrapping with paper
-                and putting in garbage
-                STORE below 20 C
-                (Air Conditioning)
-                Protect from light
+               {product.description}
               </DescriptionText>
             </BoxDescriptionAlignText>
           </BoxDescription>

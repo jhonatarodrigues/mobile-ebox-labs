@@ -15,12 +15,12 @@ type BoxProductProps = {
 export const BoxProduct = ({product}: BoxProductProps) => {
   const navigation = useNavigation();
 
-  console.log('\n\n\n\n =====   ',  `${BASE_URL}/upload/${product.file}`);
-
-
   return (
     <ContentBox>
-      <TouchableOpacity onPress={() => navigation.navigate('ProductsDetail')}>
+      <TouchableOpacity onPress={() => navigation.navigate({
+        name: 'ProductsDetail',
+        params: {product}
+      })}>
       <Box>
         <ContentImage>
           <Image source={{uri: `${BASE_URL}/uploads/${product.file}`}} />

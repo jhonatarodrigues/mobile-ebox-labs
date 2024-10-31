@@ -1,5 +1,5 @@
 import { ProductsModel } from '@/model/products';
-import { ProductsRepository } from '@/repositories/products';
+import { ProductsRepository } from '@/repositories/productsRepository';
 
 interface UseProductsProps {
   getProducts: () => Promise<ProductsModel[]>;
