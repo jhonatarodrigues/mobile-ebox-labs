@@ -9,8 +9,7 @@ import QRCodeAnalyser from '@/assets/svg/qrcode-analyser.svg'
 import COLORS from '@/constants/colors';
 import { useQRCode } from '@/hooks/business/useQRCode';
 import { useNavigation } from '@react-navigation/native';
-
-
+import Toast from 'react-native-toast-message';
 
 
 const QrCodeScanner = () => {
@@ -18,7 +17,7 @@ const QrCodeScanner = () => {
   const { getQRCode } = useQRCode();
   const [hasPermission, setHasPermission] = useState(false);
   const device = useCameraDevice('back');
-  const [code, setCode] = useState('MTczMDI5OTQ3NjI1MjA1Mw==');
+  const [code, setCode] = useState('');
   const codeScanner = useCodeScanner({
     codeTypes: ['qr', 'ean-13'],
     onCodeScanned: (codes) => {
@@ -38,18 +37,39 @@ const QrCodeScanner = () => {
   }, []);
 
   const handleQRCode = async (code: string) => {
-    const response = await getQRCode(code);
+    try {
+      const response = await getQRCode(code);
 
+      if (response.views < 10) {
+        Toast.show({
+          type: 'success',
+          text1: response.product.title,
+          text2: 'Produto original e verificado com sucesso'
+        });
 
-    navigation.navigate({
-      name: 'ProductsDetail',
-      params: {product: response.product}
-    })
+        navigation.navigate({
+          name: 'ProductsDetail',
+          params: {product: response.product}
+        })
+      } else {
+        Toast.show({
+          type: 'error',
+          text1: response.product.title,
+          text2: 'Produto potencialmente falsificado, entre em contato com a equipe ebox'
+        });
+      }
+    } catch (error) {
+      
+      Toast.show({
+        type: 'error',
+        text1: 'Erro ao verificar produto',
+        text2: 'Tente novamente mais tarde'
+      });
+    }
   }
 
   useEffect(() => {
     if(code) {
-      console.log('code', code);
       handleQRCode(code);
     }
   }, [code])
