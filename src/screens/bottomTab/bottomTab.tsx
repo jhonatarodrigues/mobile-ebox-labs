@@ -3,7 +3,7 @@ import { BottomTabBarProps, BottomTabHeaderProps, BottomTabNavigationEventMap, c
 import HomeScreen from '@/screens/home';
 import ProductsScreen from '@/screens/products';
 import QrCodeScanner from '@/screens/qrCodeScanner';
-import { TouchableOpacity } from 'react-native';
+import { Linking, TouchableOpacity } from 'react-native';
 import { BaseGradient } from '@/components/BaseGradient';
 
 import HomeIcon from '@/assets/svg/home.svg';
@@ -14,7 +14,6 @@ import WhatsIcon from '@/assets/svg/whats.svg';
 
 import { BaseIcon, ContentTabBar, TabBarItem } from './styles';
 import { NavigationHelpers, ParamListBase } from '@react-navigation/native';
-import { NativeStackHeaderProps } from '@react-navigation/native-stack';
 import HeaderComponent from '@/components/header';
 
 type Route = {
@@ -65,8 +64,8 @@ const tabBarItem = (route: Route, navigation: NavigationHelpers<ParamListBase, B
 const tabBar = ({state, navigation}: BottomTabBarProps) => (
   <ContentTabBar>
     {state.routes.map((route) => tabBarItem(route, navigation))}
-    {renderItem(icons.Site, () => console.log('Site'))}
-    {renderItem(icons.Whats, () => console.log('Whats'))}
+    
+    {renderItem(icons.Whats, () => Linking.openURL('https://wa.me/556199173165'))}
   </ContentTabBar>
 );
 

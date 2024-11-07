@@ -31,7 +31,6 @@ const QrCodeScanner = () => {
   useEffect(() => {
     const requestCameraPermission = async () => {
       const permission = await Camera.requestCameraPermission();
-      console.log("Camera.requestCameraPermission ", permission);
       setHasPermission(permission === "granted");
     };
 
@@ -40,7 +39,6 @@ const QrCodeScanner = () => {
 
   const handleQRCode = async (code: string) => {
     const response = await getQRCode(code);
-    console.log('response', response);
 
 
     navigation.navigate({
