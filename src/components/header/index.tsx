@@ -1,21 +1,21 @@
 import React from "react";
-import { Text, View, NativeModules, Platform, StatusBar, TouchableOpacity } from "react-native";
+import { Platform, StatusBar, TouchableOpacity, } from "react-native";
 import { BaseAlignBack, BaseButtonBack, ContentHeader, Title } from "./styles";
 import ArrowLeft from "@/assets/svg/arrowLeft.svg";
 import COLORS from "@/constants/colors";
 import { useNavigation } from "@react-navigation/native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-const {StatusBarManager} = NativeModules;
 
 interface IHeaderProps {
   title: string;
 }
 
 
-
 const HeaderComponent = ({title} : IHeaderProps) => {
+  const insets = useSafeAreaInsets();
   const navigation = useNavigation();
-  const STATUSBAR_HEIGHT = Platform.OS ? StatusBarManager.HEIGHT : StatusBar.currentHeight;
+  const STATUSBAR_HEIGHT = Platform.OS  ? insets.top : StatusBar.currentHeight;
   const onBack = () => navigation.goBack();
 
   return (
